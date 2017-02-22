@@ -1,0 +1,11 @@
+@import "normalize.css";
+@import "settings.css.scss";
+
+@import "core/_navigation.css.scss";
+@import "core/_grid.css.scss";
+@import "core/_sections.css.scss";
+
+
+body {
+  background: $body-color;
+}
