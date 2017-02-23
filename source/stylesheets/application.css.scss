@@ -1,11 +1,16 @@
 @import "normalize.css";
 @import "settings.css.scss";
+@import "mixins.css.scss";
 
-@import "core/_navigation.css.scss";
+@import "core/_sidebar.css.scss";
 @import "core/_grid.css.scss";
 @import "core/_sections.css.scss";
-
+@import "core/_cta.css.scss";
+@import "core/_transitions.css.scss";
 
 body {
-  background: $body-color;
+  background: black;
+}
+* {
+  box-sizing: border-box;
 }

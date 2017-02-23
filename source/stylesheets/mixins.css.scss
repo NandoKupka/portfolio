@@ -1,0 +1,47 @@
+/*
+ * Global mixins.
+ */
+
+@mixin attention() {
+  &:hover,
+  &:active,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin svg($path) {
+  background-image: image-url("svg/#{$path}.svg");
+  .no-svg & { background-image: image-url("#{$path}.png"); }
+}
+
+@mixin respond-to($val, $query: min-width, $media: screen) {
+  @media #{$media} and ($query: $val) {
+    @content;
+  }
+}
+
+@mixin align-vertically() {
+  position: absolute;
+  top: 50%;
+
+  @include transform(translateY(-50%));
+}
+
+@mixin test-img-alt {
+  img {
+    border: 2px dotted red;
+  }
+  img[alt] {
+    border: none;
+  }
+}
+
+@mixin test-link-title {
+  a {
+    border: 2px dotted #ff0ec9;
+  }
+  a[title] {
+    border: none;
+  }
+}

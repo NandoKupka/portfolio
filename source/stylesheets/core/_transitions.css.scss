@@ -1,0 +1,10 @@
+.show_from_behind {
+  transition: 0.6s ease-in;
+  opacity: 0;
+  transform: scale(0);
+}
+
+.active .show_from_behind {
+  opacity: 1;
+  transform: scale(1);
+}

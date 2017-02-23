@@ -1,0 +1,22 @@
+.kupka_cta {
+  padding: 15px 20px;
+  display: inline-block;
+  background-color: #bd081c;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.2s;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  @include attention() {
+    background-color: #c0392b;
+  }
+  &.confirm_cta {
+    background-color: #125d32;
+    @include attention() {
+      background-color: #27ae60;
+    }
+  }
+}

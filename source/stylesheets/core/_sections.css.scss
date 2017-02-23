@@ -1,0 +1,41 @@
+.kupka_section:nth-child(even) {
+  position: relative;
+  background: -webkit-linear-gradient(20deg, rgb(45, 5, 98), rgb(56, 52, 143));
+  background: linear-gradient(20deg, rgb(45, 5, 98), rgb(56, 52, 143));
+}
+.kupka_section:nth-child(odd) {
+  position: relative;
+  background: -webkit-linear-gradient(-135deg, rgb(237, 168, 22), rgb(222, 115, 4));
+  background: linear-gradient(-135deg, rgb(237, 168, 22), rgb(222, 115, 4));
+}
+.kupka_section_title {
+  color: $title-color;
+  font-family: 'Sansita', sans-serif;
+  margin: 0;
+  font-size: 40px;
+  text-align: center;
+  display: block;
+  @include respond-to($bp-mediumB) {
+    font-size: 80px;
+  } 
+}
+.kupka_section_subtitle {
+  color: $title-color;
+  font-family: 'Sansita', sans-serif;
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  @include respond-to($bp-mediumB) {
+    font-size: 30px;
+  }
+}
+
+.kupka_section_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+}

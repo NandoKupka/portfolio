@@ -1,0 +1,236 @@
+.kupka_sidebar {
+  display: block;
+  background-color: $nav-color;
+  position: fixed;
+  z-index: 999;
+  color: $title-color;
+  bottom: 0;
+  width: 100%;
+  height: $nav-width;
+  @include respond-to($bp-mediumB) {
+    bottom: auto;
+    width: $nav-width;
+    height: 100%;
+
+  }
+}
+.kupka_social {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  @include respond-to($bp-mediumB) {
+    bottom: auto;
+  }
+
+}
+.kupka_social_list {
+  margin: 0;
+  padding: 0;
+  background: white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+  height: $nav-width/1.5;
+
+  @include respond-to($bp-mediumB) {
+    height: auto;
+  }
+}
+.kupka_social_item {
+  width: $nav-width/1.5;
+  height: $nav-width/1.5;
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.2s;
+  @include respond-to($bp-mediumB) {
+    display: block;
+    width: $nav-width;
+    height: $nav-width;
+
+  }
+  @include attention() {
+    opacity: 0.8;
+    .kupka_social_icon {
+      opacity: 0.3;
+      background-position: 55% 55%;
+    }
+  }
+}
+.kupka_social_icon {
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  transition: 0.4s;
+}
+.kupka_navbar_youtube {
+  background-color: #cd201f;
+  .kupka_social_icon {
+    background-image: image-url('icon_youtube.png');
+  }
+}
+.kupka_navbar_facebook {
+  background-color: #3b5999;
+  .kupka_social_icon {
+    background-image: image-url('icon_facebook.png');
+  }
+}
+.kupka_navbar_twitter {
+  background-color: #55acee;
+  .kupka_social_icon {
+    background-image: image-url('icon_twitter.png');
+  }
+}
+.kupka_navbar_github {
+  background-color: #131418;
+  .kupka_social_icon {
+    background-image: image-url('icon_github.png');
+  }
+}
+.kupka_navbar_linkedin {
+  background-color: #0077B5;
+  .kupka_social_icon {
+    background-image: image-url('icon_linkedin.png');
+  }
+}
+.kupka_hamburger_box {
+  height: $nav-width;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+  width: $nav-width*2;
+  @include respond-to($bp-mediumB) {
+    width: $nav-width;
+  }
+}
+.kupka_hamburger_btn {
+  width: 30px;
+  height: 2px;
+  background: white;
+  display: block;
+  position: absolute;
+  top: 38%;
+  transition: 0.3s;
+  transform: translateX(-50%) translateY(-50%);
+  box-shadow: 1px 1px 4px rgb(0, 0, 0);
+  left: $nav-width/2;
+  @include respond-to($bp-mediumB) {
+    left: 50%;
+  }
+
+  &::before, &::after {
+    content: "";
+    background: white;
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    transition: 0.3s;
+    box-shadow: 1px 1px 4px rgb(0, 0, 0);
+
+  }
+  &::before {
+    top: 9px;
+    left: 0;
+  }
+  &::after {
+    top: 19px;
+    left: 0;
+  }
+}
+.kupka_hamburger_text {
+  position: absolute;
+  left: $nav-width;
+  line-height: $nav-width;
+  text-shadow: 1px 1px 4px black;
+  bottom: 0;
+  @include respond-to($bp-mediumB) {
+    display: none;
+  }
+}
+.kupka_hamburger_btn.menu_on {
+  background: transparent;
+  box-shadow: none;
+  &::before {
+    background: white;
+    transform: rotate(45deg);
+  }
+  &::after {
+    background: white;
+    top: 9px;
+    transform: rotate(-45deg);
+  }
+}
+.kupka_navigation_list {
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.76);
+  list-style: none;
+  transition: 0.4s;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.76);
+  transform: translateX(+100%);
+  overflow: scroll;
+  max-width: 85%;
+  right: 0;
+
+  @include respond-to($bp-mediumB) {
+    opacity: 0;
+    transform: translateX(-100%);
+    left: $nav-width;
+    max-width: 100%;
+    overflow: visible;
+    right: auto;
+  }
+  &.opened {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+.kupka_navigation_list_item {
+  height: $nav-width;
+  display: block;
+  &:nth-child(even) {
+    //background: #1D2750;
+  }
+  transition: 0.3s;
+  &:not(:last-child):after {
+    content: "";
+    height: 1px;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.23);
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @include respond-to($bp-mediumB) {
+    display: inline-block;
+    position: relative;
+    &:not(:last-child):after {
+      height: 80%;
+      width: 1px;
+      display: inline-block;
+      left: auto;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+.kupka_navigation_list_link {
+  line-height: $nav-width;
+  padding: 0 50px;
+  display: inline-block;
+  text-align: center;
+  color: $title-color;
+  text-decoration: none;
+  width: 100%;
+  transition: 0.3s;
+
+  @include attention() {
+    opacity: 0.2;
+  }
+  @include respond-to($bp-mediumB) {
+    padding: 0 25px;
+  }
+}
